@@ -13,7 +13,7 @@ struct AnimeQLApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GraphQueryTestView()
         }
         .modelContainer(for: Item.self)
     }

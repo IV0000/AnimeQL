@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,13 @@
 		FF7DE5ED2A9E7A080007115C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE5EC2A9E7A080007115C /* Item.swift */; };
 		FF7DE5EF2A9E7A0B0007115C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7DE5EE2A9E7A0B0007115C /* Assets.xcassets */; };
 		FF7DE5F22A9E7A0B0007115C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7DE5F12A9E7A0B0007115C /* Preview Assets.xcassets */; };
+		FF7DE5FA2A9E7CC00007115C /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = FF7DE5F92A9E7CC00007115C /* Apollo */; };
+		FF7DE5FC2A9E7CC00007115C /* Apollo-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = FF7DE5FB2A9E7CC00007115C /* Apollo-Dynamic */; };
+		FF7DE5FE2A9E7CC00007115C /* ApolloAPI in Frameworks */ = {isa = PBXBuildFile; productRef = FF7DE5FD2A9E7CC00007115C /* ApolloAPI */; };
+		FF7DE6022A9E7CC00007115C /* ApolloSQLite in Frameworks */ = {isa = PBXBuildFile; productRef = FF7DE6012A9E7CC00007115C /* ApolloSQLite */; };
+		FF7DE6042A9E810B0007115C /* GraphQL in Resources */ = {isa = PBXBuildFile; fileRef = FF7DE6032A9E810B0007115C /* GraphQL */; };
+		FF7DE6072A9E8A8C0007115C /* AnilistApi in Frameworks */ = {isa = PBXBuildFile; productRef = FF7DE6062A9E8A8C0007115C /* AnilistApi */; };
+		FF7DE60A2A9E8AD60007115C /* GraphQueryTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE6092A9E8AD60007115C /* GraphQueryTestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +28,8 @@
 		FF7DE5EC2A9E7A080007115C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FF7DE5EE2A9E7A0B0007115C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF7DE5F12A9E7A0B0007115C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF7DE6032A9E810B0007115C /* GraphQL */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GraphQL; sourceTree = "<group>"; };
+		FF7DE6092A9E8AD60007115C /* GraphQueryTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQueryTestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +37,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF7DE6072A9E8A8C0007115C /* AnilistApi in Frameworks */,
+				FF7DE5FE2A9E7CC00007115C /* ApolloAPI in Frameworks */,
+				FF7DE5FA2A9E7CC00007115C /* Apollo in Frameworks */,
+				FF7DE6022A9E7CC00007115C /* ApolloSQLite in Frameworks */,
+				FF7DE5FC2A9E7CC00007115C /* Apollo-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +53,7 @@
 			children = (
 				FF7DE5E72A9E7A080007115C /* AnimeQL */,
 				FF7DE5E62A9E7A080007115C /* Products */,
+				FF7DE6082A9E8AAF0007115C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,7 +68,9 @@
 		FF7DE5E72A9E7A080007115C /* AnimeQL */ = {
 			isa = PBXGroup;
 			children = (
+				FF7DE6032A9E810B0007115C /* GraphQL */,
 				FF7DE5E82A9E7A080007115C /* AnimeQLApp.swift */,
+				FF7DE6092A9E8AD60007115C /* GraphQueryTestView.swift */,
 				FF7DE5EA2A9E7A080007115C /* ContentView.swift */,
 				FF7DE5EC2A9E7A080007115C /* Item.swift */,
 				FF7DE5EE2A9E7A0B0007115C /* Assets.xcassets */,
@@ -68,6 +85,13 @@
 				FF7DE5F12A9E7A0B0007115C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FF7DE6082A9E8AAF0007115C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +110,13 @@
 			dependencies = (
 			);
 			name = AnimeQL;
+			packageProductDependencies = (
+				FF7DE5F92A9E7CC00007115C /* Apollo */,
+				FF7DE5FB2A9E7CC00007115C /* Apollo-Dynamic */,
+				FF7DE5FD2A9E7CC00007115C /* ApolloAPI */,
+				FF7DE6012A9E7CC00007115C /* ApolloSQLite */,
+				FF7DE6062A9E8A8C0007115C /* AnilistApi */,
+			);
 			productName = AnimeQL;
 			productReference = FF7DE5E52A9E7A080007115C /* AnimeQL.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +145,10 @@
 				Base,
 			);
 			mainGroup = FF7DE5DC2A9E7A080007115C;
+			packageReferences = (
+				FF7DE5F82A9E7CC00007115C /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				FF7DE6052A9E8A8C0007115C /* XCLocalSwiftPackageReference "AnilistApi" */,
+			);
 			productRefGroup = FF7DE5E62A9E7A080007115C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -128,6 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF7DE6042A9E810B0007115C /* GraphQL in Resources */,
 				FF7DE5F22A9E7A0B0007115C /* Preview Assets.xcassets in Resources */,
 				FF7DE5EF2A9E7A0B0007115C /* Assets.xcassets in Resources */,
 			);
@@ -142,6 +178,7 @@
 			files = (
 				FF7DE5EB2A9E7A080007115C /* ContentView.swift in Sources */,
 				FF7DE5ED2A9E7A080007115C /* Item.swift in Sources */,
+				FF7DE60A2A9E8AD60007115C /* GraphQueryTestView.swift in Sources */,
 				FF7DE5E92A9E7A080007115C /* AnimeQLApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +385,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		FF7DE6052A9E8A8C0007115C /* XCLocalSwiftPackageReference "AnilistApi" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = AnilistApi;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FF7DE5F82A9E7CC00007115C /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FF7DE5F92A9E7CC00007115C /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF7DE5F82A9E7CC00007115C /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		FF7DE5FB2A9E7CC00007115C /* Apollo-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF7DE5F82A9E7CC00007115C /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = "Apollo-Dynamic";
+		};
+		FF7DE5FD2A9E7CC00007115C /* ApolloAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF7DE5F82A9E7CC00007115C /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloAPI;
+		};
+		FF7DE6012A9E7CC00007115C /* ApolloSQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF7DE5F82A9E7CC00007115C /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloSQLite;
+		};
+		FF7DE6062A9E8A8C0007115C /* AnilistApi */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AnilistApi;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FF7DE5DD2A9E7A080007115C /* Project object */;
 }

@@ -1,0 +1,19 @@
+query Page($perPage: Int) {
+  Page(perPage: $perPage) {
+    mediaList {
+      media {
+        averageScore
+        coverImage {
+          medium
+        }
+        description
+        episodes
+        genres
+        title {
+          romaji
+          english
+        }
+      }
+    }
+  }
+}
