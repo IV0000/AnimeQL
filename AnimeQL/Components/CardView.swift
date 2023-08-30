@@ -13,6 +13,14 @@ import SwiftUI
 struct CardView: View {
     var mediaList: PageQuery.Data.Page.MediaList?
 
+    var title: String {
+        if let englishTitle = mediaList?.media?.title?.english {
+            return englishTitle
+        } else {
+            return mediaList?.media?.title?.romaji ?? ""
+        }
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             AsyncImage(url: URL(string: mediaList?.media?.coverImage?.extraLarge ?? ""),
@@ -27,7 +35,6 @@ struct CardView: View {
                         .resizable()
                         .scaledToFill()
                         .transition(.opacity.combined(with: .slide))
-                        .clipped()
                 case let .failure(error):
                     asyncImagePlaceholder(error: error.localizedDescription)
                 @unknown default:
@@ -35,9 +42,10 @@ struct CardView: View {
                 }
             }
             .frame(width: 180, height: 220)
+            .clipped()
 
             VStack(alignment: .leading) {
-                Text(mediaList?.media?.title?.english ?? "")
+                Text(title)
                     .lineLimit(2)
                 Spacer()
                 HStack {
