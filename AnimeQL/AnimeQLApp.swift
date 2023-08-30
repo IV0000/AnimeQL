@@ -5,15 +5,14 @@
 //  Created by Ivan Voloshchuk on 29/08/23.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 @main
 struct AnimeQLApp: App {
-
     var body: some Scene {
         WindowGroup {
-            GraphQueryTestView()
+            LandingView()
         }
         .modelContainer(for: Item.self)
     }

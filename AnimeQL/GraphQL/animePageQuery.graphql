@@ -4,7 +4,7 @@ query Page($perPage: Int) {
       media {
         averageScore
         coverImage {
-          medium
+          extraLarge
         }
         description
         episodes

@@ -4,9 +4,9 @@
 import ApolloAPI
 
 public extension Objects {
-  /// The official titles of the media in various languages
-  static let MediaTitle = Object(
-    typename: "MediaTitle",
-    implementedInterfaces: []
-  )
+    /// The official titles of the media in various languages
+    static let MediaTitle = Object(
+        typename: "MediaTitle",
+        implementedInterfaces: []
+    )
 }

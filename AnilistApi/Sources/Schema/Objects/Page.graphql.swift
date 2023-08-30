@@ -4,9 +4,9 @@
 import ApolloAPI
 
 public extension Objects {
-  /// Page of data
-  static let Page = Object(
-    typename: "Page",
-    implementedInterfaces: []
-  )
+    /// Page of data
+    static let Page = Object(
+        typename: "Page",
+        implementedInterfaces: []
+    )
 }

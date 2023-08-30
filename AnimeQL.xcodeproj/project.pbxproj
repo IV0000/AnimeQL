@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF1933412A9FC29900F30EDC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1933402A9FC29900F30EDC /* CardView.swift */; };
 		FF7DE5E92A9E7A080007115C /* AnimeQLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE5E82A9E7A080007115C /* AnimeQLApp.swift */; };
 		FF7DE5EB2A9E7A080007115C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE5EA2A9E7A080007115C /* ContentView.swift */; };
 		FF7DE5ED2A9E7A080007115C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE5EC2A9E7A080007115C /* Item.swift */; };
@@ -18,10 +19,11 @@
 		FF7DE6022A9E7CC00007115C /* ApolloSQLite in Frameworks */ = {isa = PBXBuildFile; productRef = FF7DE6012A9E7CC00007115C /* ApolloSQLite */; };
 		FF7DE6042A9E810B0007115C /* GraphQL in Resources */ = {isa = PBXBuildFile; fileRef = FF7DE6032A9E810B0007115C /* GraphQL */; };
 		FF7DE6072A9E8A8C0007115C /* AnilistApi in Frameworks */ = {isa = PBXBuildFile; productRef = FF7DE6062A9E8A8C0007115C /* AnilistApi */; };
-		FF7DE60A2A9E8AD60007115C /* GraphQueryTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE6092A9E8AD60007115C /* GraphQueryTestView.swift */; };
+		FF7DE60A2A9E8AD60007115C /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE6092A9E8AD60007115C /* LandingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF1933402A9FC29900F30EDC /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		FF7DE5E52A9E7A080007115C /* AnimeQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7DE5E82A9E7A080007115C /* AnimeQLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeQLApp.swift; sourceTree = "<group>"; };
 		FF7DE5EA2A9E7A080007115C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -29,7 +31,7 @@
 		FF7DE5EE2A9E7A0B0007115C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF7DE5F12A9E7A0B0007115C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FF7DE6032A9E810B0007115C /* GraphQL */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GraphQL; sourceTree = "<group>"; };
-		FF7DE6092A9E8AD60007115C /* GraphQueryTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQueryTestView.swift; sourceTree = "<group>"; };
+		FF7DE6092A9E8AD60007115C /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF19333F2A9FC27A00F30EDC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FF1933402A9FC29900F30EDC /* CardView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FF1933422A9FD41200F30EDC /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				FF7DE5EA2A9E7A080007115C /* ContentView.swift */,
+				FF7DE5EC2A9E7A080007115C /* Item.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		FF7DE5DC2A9E7A080007115C = {
 			isa = PBXGroup;
 			children = (
@@ -70,9 +89,9 @@
 			children = (
 				FF7DE6032A9E810B0007115C /* GraphQL */,
 				FF7DE5E82A9E7A080007115C /* AnimeQLApp.swift */,
-				FF7DE6092A9E8AD60007115C /* GraphQueryTestView.swift */,
-				FF7DE5EA2A9E7A080007115C /* ContentView.swift */,
-				FF7DE5EC2A9E7A080007115C /* Item.swift */,
+				FF7DE6092A9E8AD60007115C /* LandingView.swift */,
+				FF19333F2A9FC27A00F30EDC /* Components */,
+				FF1933422A9FD41200F30EDC /* Test */,
 				FF7DE5EE2A9E7A0B0007115C /* Assets.xcassets */,
 				FF7DE5F02A9E7A0B0007115C /* Preview Content */,
 			);
@@ -178,8 +197,9 @@
 			files = (
 				FF7DE5EB2A9E7A080007115C /* ContentView.swift in Sources */,
 				FF7DE5ED2A9E7A080007115C /* Item.swift in Sources */,
-				FF7DE60A2A9E8AD60007115C /* GraphQueryTestView.swift in Sources */,
+				FF7DE60A2A9E8AD60007115C /* LandingView.swift in Sources */,
 				FF7DE5E92A9E7A080007115C /* AnimeQLApp.swift in Sources */,
+				FF1933412A9FC29900F30EDC /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
