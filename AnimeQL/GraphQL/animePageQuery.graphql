@@ -1,6 +1,6 @@
-query Page($perPage: Int, $sort: [MediaSort]) {
+query Page($perPage: Int, $sort: [MediaSort], $type: MediaType) {
   Page(perPage: $perPage) {
-    media(sort: $sort) {
+    media(sort: $sort, type: $type) {
       averageScore
       coverImage {
         extraLarge
@@ -14,7 +14,7 @@ query Page($perPage: Int, $sort: [MediaSort]) {
       }
       duration
       format
-      type
     }
   }
 }
+

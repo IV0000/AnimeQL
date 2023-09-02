@@ -7,23 +7,27 @@ public class PageQuery: GraphQLQuery {
   public static let operationName: String = "Page"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query Page($perPage: Int, $sort: [MediaSort]) { Page(perPage: $perPage) { __typename media(sort: $sort) { __typename averageScore coverImage { __typename extraLarge } description episodes genres title { __typename romaji english } duration format type } } }"#
+      #"query Page($perPage: Int, $sort: [MediaSort], $type: MediaType) { Page(perPage: $perPage) { __typename media(sort: $sort, type: $type) { __typename averageScore coverImage { __typename extraLarge } description episodes genres title { __typename romaji english } duration format } } }"#
     ))
 
   public var perPage: GraphQLNullable<Int>
   public var sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>
+  public var type: GraphQLNullable<GraphQLEnum<MediaType>>
 
   public init(
     perPage: GraphQLNullable<Int>,
-    sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>
+    sort: GraphQLNullable<[GraphQLEnum<MediaSort>?]>,
+    type: GraphQLNullable<GraphQLEnum<MediaType>>
   ) {
     self.perPage = perPage
     self.sort = sort
+    self.type = type
   }
 
   public var __variables: Variables? { [
     "perPage": perPage,
-    "sort": sort
+    "sort": sort,
+    "type": type
   ] }
 
   public struct Data: AnilistApi.SelectionSet {
@@ -47,7 +51,10 @@ public class PageQuery: GraphQLQuery {
       public static var __parentType: ApolloAPI.ParentType { AnilistApi.Objects.Page }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("media", [Medium?]?.self, arguments: ["sort": .variable("sort")]),
+        .field("media", [Medium?]?.self, arguments: [
+          "sort": .variable("sort"),
+          "type": .variable("type")
+        ]),
       ] }
 
       public var media: [Medium?]? { __data["media"] }
@@ -70,7 +77,6 @@ public class PageQuery: GraphQLQuery {
           .field("title", Title?.self),
           .field("duration", Int?.self),
           .field("format", GraphQLEnum<AnilistApi.MediaFormat>?.self),
-          .field("type", GraphQLEnum<AnilistApi.MediaType>?.self),
         ] }
 
         /// A weighted average score of all the user's scores of the media
@@ -89,8 +95,6 @@ public class PageQuery: GraphQLQuery {
         public var duration: Int? { __data["duration"] }
         /// The format the media was released in
         public var format: GraphQLEnum<AnilistApi.MediaFormat>? { __data["format"] }
-        /// The type of the media; anime or manga
-        public var type: GraphQLEnum<AnilistApi.MediaType>? { __data["type"] }
 
         /// Page.Medium.CoverImage
         ///

@@ -11,7 +11,7 @@ import SwiftUI
 
 struct LandingView: View {
     @StateObject var ns = NetworkService()
-    @State private var number = 20
+    @State private var number = 10
     var body: some View {
         VStack(alignment: .leading) {
             Text("Highest score")
@@ -19,9 +19,7 @@ struct LandingView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(ns.mediaList, id: \.self) { media in
-                        if media?.type == MediaType.anime {
                             CardView(medium: media)
-                        }
                     }
                 }
             }
@@ -54,7 +52,8 @@ class NetworkService: ObservableObject {
            }
            
            apollo.fetch(query: PageQuery(perPage: GraphQLNullable(integerLiteral: numberOfElements),
-                                         sort: .some(sortEnum))){ [weak self] result in
+                                         sort: .some(sortEnum),
+                                         type: .some( GraphQLEnum(MediaType.anime)))){ [weak self] result in
             switch result {
             case let .success(value):
                 print(value)
