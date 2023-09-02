@@ -87,6 +87,6 @@ extension View {
 
 extension Int {
     func scoreFormatter() -> String {
-        String(format: "%.1f", (Float(self) / 20.0))
+        String(format: "%.1f", Float(self) / 20.0)
     }
 }

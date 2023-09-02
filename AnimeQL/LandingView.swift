@@ -19,7 +19,7 @@ struct LandingView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(ns.mediaList, id: \.self) { media in
-                            CardView(medium: media)
+                        CardView(medium: media)
                     }
                 }
             }
@@ -41,19 +41,19 @@ class NetworkService: ObservableObject {
     private var apollo = ApolloClient(url: URL(string: "https://graphql.anilist.co")!)
     @Published var mediaList: [PageQuery.Data.Page.Medium?] = []
 
-    func fetchPage(numberOfElements: Int,sort: MediaSort?) {
-        
+    func fetchPage(numberOfElements: Int, sort: MediaSort?) {
         let sortEnum: [GraphQLEnum<MediaSort>?]
-           
-           if let sortValue = sort {
-               sortEnum = [.init(rawValue: sortValue.rawValue)]
-           } else {
-               sortEnum = []
-           }
-           
-           apollo.fetch(query: PageQuery(perPage: GraphQLNullable(integerLiteral: numberOfElements),
-                                         sort: .some(sortEnum),
-                                         type: .some( GraphQLEnum(MediaType.anime)))){ [weak self] result in
+
+        if let sortValue = sort {
+            sortEnum = [.init(rawValue: sortValue.rawValue)]
+        } else {
+            sortEnum = []
+        }
+
+        apollo.fetch(query: PageQuery(perPage: GraphQLNullable(integerLiteral: numberOfElements),
+                                      sort: .some(sortEnum),
+                                      type: .some(GraphQLEnum(MediaType.anime))))
+        { [weak self] result in
             switch result {
             case let .success(value):
                 print(value)
@@ -64,8 +64,7 @@ class NetworkService: ObservableObject {
                 print(error.localizedDescription)
             }
         }
-                   
     }
-    
-    //Add different fetches for different t
+
+    // Add different fetches for different t
 }
