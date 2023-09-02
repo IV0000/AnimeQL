@@ -1,19 +1,20 @@
-query Page($perPage: Int) {
+query Page($perPage: Int, $sort: [MediaSort]) {
   Page(perPage: $perPage) {
-    mediaList {
-      media {
-        averageScore
-        coverImage {
-          extraLarge
-        }
-        description
-        episodes
-        genres
-        title {
-          romaji
-          english
-        }
+    media(sort: $sort) {
+      averageScore
+      coverImage {
+        extraLarge
       }
+      description
+      episodes
+      genres
+      title {
+        romaji
+        english
+      }
+      duration
+      format
+      type
     }
   }
 }

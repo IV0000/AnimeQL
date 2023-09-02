@@ -14,25 +14,23 @@ struct LandingView: View {
     @State private var number = 20
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Current season")
+            Text("Highest score")
                 .font(.title2)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(ns.mediaList, id: \.self) { media in
-                        CardView(mediaList: media)
+                        if media?.type == MediaType.anime {
+                            CardView(medium: media)
+                        }
                     }
                 }
             }
-            Text("Highest score")
+            Text("Current Season")
                 .font(.title2)
             Spacer()
         }
-        .refreshable {
-            number += 10
-            ns.fetchPage(numberOfElements: number)
-        }
         .onAppear(perform: {
-            ns.fetchPage(numberOfElements: number)
+            ns.fetchPage(numberOfElements: number, sort: .scoreDesc)
         })
     }
 }
@@ -43,19 +41,32 @@ struct LandingView: View {
 
 class NetworkService: ObservableObject {
     private var apollo = ApolloClient(url: URL(string: "https://graphql.anilist.co")!)
-    @Published var mediaList: [PageQuery.Data.Page.MediaList?] = []
+    @Published var mediaList: [PageQuery.Data.Page.Medium?] = []
 
-    func fetchPage(numberOfElements: Int) {
-        apollo.fetch(query: PageQuery(perPage: GraphQLNullable(integerLiteral: numberOfElements))) { [weak self] result in
+    func fetchPage(numberOfElements: Int,sort: MediaSort?) {
+        
+        let sortEnum: [GraphQLEnum<MediaSort>?]
+           
+           if let sortValue = sort {
+               sortEnum = [.init(rawValue: sortValue.rawValue)]
+           } else {
+               sortEnum = []
+           }
+           
+           apollo.fetch(query: PageQuery(perPage: GraphQLNullable(integerLiteral: numberOfElements),
+                                         sort: .some(sortEnum))){ [weak self] result in
             switch result {
             case let .success(value):
                 print(value)
                 if let data = value.data, let page = data.page {
-                    self?.mediaList = page.mediaList ?? []
+                    self?.mediaList = page.media ?? []
                 }
             case let .failure(error):
                 print(error.localizedDescription)
             }
         }
+                   
     }
+    
+    //Add different fetches for different t
 }

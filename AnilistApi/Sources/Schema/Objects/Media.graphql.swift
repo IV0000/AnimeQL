@@ -4,9 +4,9 @@
 import ApolloAPI
 
 public extension Objects {
-    /// Anime or Manga
-    static let Media = Object(
-        typename: "Media",
-        implementedInterfaces: []
-    )
+  /// Anime or Manga
+  static let Media = Object(
+    typename: "Media",
+    implementedInterfaces: []
+  )
 }

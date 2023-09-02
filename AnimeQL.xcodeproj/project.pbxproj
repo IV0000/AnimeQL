@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FF1933412A9FC29900F30EDC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1933402A9FC29900F30EDC /* CardView.swift */; };
+		FF2D12122AA317DD00C3D168 /* AnilistApi in Frameworks */ = {isa = PBXBuildFile; productRef = FF2D12112AA317DD00C3D168 /* AnilistApi */; };
 		FF7DE5E92A9E7A080007115C /* AnimeQLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE5E82A9E7A080007115C /* AnimeQLApp.swift */; };
 		FF7DE5EB2A9E7A080007115C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE5EA2A9E7A080007115C /* ContentView.swift */; };
 		FF7DE5ED2A9E7A080007115C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE5EC2A9E7A080007115C /* Item.swift */; };
@@ -18,7 +19,6 @@
 		FF7DE5FE2A9E7CC00007115C /* ApolloAPI in Frameworks */ = {isa = PBXBuildFile; productRef = FF7DE5FD2A9E7CC00007115C /* ApolloAPI */; };
 		FF7DE6022A9E7CC00007115C /* ApolloSQLite in Frameworks */ = {isa = PBXBuildFile; productRef = FF7DE6012A9E7CC00007115C /* ApolloSQLite */; };
 		FF7DE6042A9E810B0007115C /* GraphQL in Resources */ = {isa = PBXBuildFile; fileRef = FF7DE6032A9E810B0007115C /* GraphQL */; };
-		FF7DE6072A9E8A8C0007115C /* AnilistApi in Frameworks */ = {isa = PBXBuildFile; productRef = FF7DE6062A9E8A8C0007115C /* AnilistApi */; };
 		FF7DE60A2A9E8AD60007115C /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE6092A9E8AD60007115C /* LandingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF7DE6072A9E8A8C0007115C /* AnilistApi in Frameworks */,
+				FF2D12122AA317DD00C3D168 /* AnilistApi in Frameworks */,
 				FF7DE5FE2A9E7CC00007115C /* ApolloAPI in Frameworks */,
 				FF7DE5FA2A9E7CC00007115C /* Apollo in Frameworks */,
 				FF7DE6022A9E7CC00007115C /* ApolloSQLite in Frameworks */,
@@ -134,7 +134,7 @@
 				FF7DE5FB2A9E7CC00007115C /* Apollo-Dynamic */,
 				FF7DE5FD2A9E7CC00007115C /* ApolloAPI */,
 				FF7DE6012A9E7CC00007115C /* ApolloSQLite */,
-				FF7DE6062A9E8A8C0007115C /* AnilistApi */,
+				FF2D12112AA317DD00C3D168 /* AnilistApi */,
 			);
 			productName = AnimeQL;
 			productReference = FF7DE5E52A9E7A080007115C /* AnimeQL.app */;
@@ -425,6 +425,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FF2D12112AA317DD00C3D168 /* AnilistApi */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF7DE6052A9E8A8C0007115C /* XCLocalSwiftPackageReference "AnilistApi" */;
+			productName = AnilistApi;
+		};
 		FF7DE5F92A9E7CC00007115C /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FF7DE5F82A9E7CC00007115C /* XCRemoteSwiftPackageReference "apollo-ios" */;
@@ -444,10 +449,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF7DE5F82A9E7CC00007115C /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = ApolloSQLite;
-		};
-		FF7DE6062A9E8A8C0007115C /* AnilistApi */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = AnilistApi;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

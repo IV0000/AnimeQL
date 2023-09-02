@@ -11,19 +11,19 @@ import SwiftUI
 // mediaList?.media?.coverImage?.medium ?? ""
 
 struct CardView: View {
-    var mediaList: PageQuery.Data.Page.MediaList?
+    var medium: PageQuery.Data.Page.Medium?
 
     var title: String {
-        if let englishTitle = mediaList?.media?.title?.english {
+        if let englishTitle = medium?.title?.english {
             return englishTitle
         } else {
-            return mediaList?.media?.title?.romaji ?? ""
+            return medium?.title?.romaji ?? ""
         }
     }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            AsyncImage(url: URL(string: mediaList?.media?.coverImage?.extraLarge ?? ""),
+            AsyncImage(url: URL(string: medium?.coverImage?.extraLarge ?? ""),
                        transaction: .init(animation: .easeIn(duration: 0.3)))
             { phase in
                 switch phase {
@@ -50,9 +50,9 @@ struct CardView: View {
                 Spacer()
                 HStack {
                     Image(systemName: "tv")
-                    Text("\(mediaList?.media?.episodes ?? 0)")
+                    Text("\(medium?.episodes ?? 0)")
                     Spacer()
-                    Text(mediaList?.media?.averageScore?.scoreFormatter() ?? "")
+                    Text(medium?.averageScore?.scoreFormatter() ?? "")
                     Image(systemName: "star")
                 }
             }
