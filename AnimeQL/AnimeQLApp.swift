@@ -12,7 +12,7 @@ import SwiftUI
 struct AnimeQLApp: App {
     var body: some Scene {
         WindowGroup {
-            LandingView()
+            CardDetailView()
         }
         .modelContainer(for: Item.self)
     }

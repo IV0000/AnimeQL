@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FF1933412A9FC29900F30EDC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1933402A9FC29900F30EDC /* CardView.swift */; };
+		FF27D7BD2AA79A05002EF0DE /* HomeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF27D7BC2AA79A05002EF0DE /* HomeTest.swift */; };
 		FF2D12122AA317DD00C3D168 /* AnilistApi in Frameworks */ = {isa = PBXBuildFile; productRef = FF2D12112AA317DD00C3D168 /* AnilistApi */; };
 		FF7DE5E92A9E7A080007115C /* AnimeQLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE5E82A9E7A080007115C /* AnimeQLApp.swift */; };
 		FF7DE5EB2A9E7A080007115C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE5EA2A9E7A080007115C /* ContentView.swift */; };
@@ -21,10 +22,12 @@
 		FF7DE6042A9E810B0007115C /* GraphQL in Resources */ = {isa = PBXBuildFile; fileRef = FF7DE6032A9E810B0007115C /* GraphQL */; };
 		FF7DE60A2A9E8AD60007115C /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE6092A9E8AD60007115C /* LandingView.swift */; };
 		FFA5EBEB2AA33179002EF160 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA5EBEA2AA33179002EF160 /* CardDetailView.swift */; };
+		FFFE9DD42AA656E200A917F1 /* String+Html.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFE9DD32AA656E200A917F1 /* String+Html.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FF1933402A9FC29900F30EDC /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		FF27D7BC2AA79A05002EF0DE /* HomeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTest.swift; sourceTree = "<group>"; };
 		FF7DE5E52A9E7A080007115C /* AnimeQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7DE5E82A9E7A080007115C /* AnimeQLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeQLApp.swift; sourceTree = "<group>"; };
 		FF7DE5EA2A9E7A080007115C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		FF7DE6032A9E810B0007115C /* GraphQL */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GraphQL; sourceTree = "<group>"; };
 		FF7DE6092A9E8AD60007115C /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		FFA5EBEA2AA33179002EF160 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
+		FFFE9DD32AA656E200A917F1 /* String+Html.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Html.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 			children = (
 				FF7DE5EA2A9E7A080007115C /* ContentView.swift */,
 				FF7DE5EC2A9E7A080007115C /* Item.swift */,
+				FF27D7BC2AA79A05002EF0DE /* HomeTest.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -90,6 +95,7 @@
 		FF7DE5E72A9E7A080007115C /* AnimeQL */ = {
 			isa = PBXGroup;
 			children = (
+				FFFE9DD22AA656CA00A917F1 /* Extensions */,
 				FF7DE6032A9E810B0007115C /* GraphQL */,
 				FF7DE5E82A9E7A080007115C /* AnimeQLApp.swift */,
 				FF7DE6092A9E8AD60007115C /* LandingView.swift */,
@@ -114,6 +120,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FFFE9DD22AA656CA00A917F1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FFFE9DD32AA656E200A917F1 /* String+Html.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +214,10 @@
 			files = (
 				FF7DE5EB2A9E7A080007115C /* ContentView.swift in Sources */,
 				FF7DE5ED2A9E7A080007115C /* Item.swift in Sources */,
+				FF27D7BD2AA79A05002EF0DE /* HomeTest.swift in Sources */,
 				FF7DE60A2A9E8AD60007115C /* LandingView.swift in Sources */,
 				FFA5EBEB2AA33179002EF160 /* CardDetailView.swift in Sources */,
+				FFFE9DD42AA656E200A917F1 /* String+Html.swift in Sources */,
 				FF7DE5E92A9E7A080007115C /* AnimeQLApp.swift in Sources */,
 				FF1933412A9FC29900F30EDC /* CardView.swift in Sources */,
 			);

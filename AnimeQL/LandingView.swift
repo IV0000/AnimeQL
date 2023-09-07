@@ -1,5 +1,5 @@
 //
-//  GraphQueryTestView.swift
+//  LandingView.swift
 //  AnimeQL
 //
 //  Created by Ivan Voloshchuk on 29/08/23.
