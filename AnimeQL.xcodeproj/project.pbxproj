@@ -8,11 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FF1933412A9FC29900F30EDC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1933402A9FC29900F30EDC /* CardView.swift */; };
-		FF27D7BD2AA79A05002EF0DE /* HomeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF27D7BC2AA79A05002EF0DE /* HomeTest.swift */; };
 		FF2D12122AA317DD00C3D168 /* AnilistApi in Frameworks */ = {isa = PBXBuildFile; productRef = FF2D12112AA317DD00C3D168 /* AnilistApi */; };
 		FF7DE5E92A9E7A080007115C /* AnimeQLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE5E82A9E7A080007115C /* AnimeQLApp.swift */; };
-		FF7DE5EB2A9E7A080007115C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE5EA2A9E7A080007115C /* ContentView.swift */; };
-		FF7DE5ED2A9E7A080007115C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE5EC2A9E7A080007115C /* Item.swift */; };
 		FF7DE5EF2A9E7A0B0007115C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7DE5EE2A9E7A0B0007115C /* Assets.xcassets */; };
 		FF7DE5F22A9E7A0B0007115C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7DE5F12A9E7A0B0007115C /* Preview Assets.xcassets */; };
 		FF7DE5FA2A9E7CC00007115C /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = FF7DE5F92A9E7CC00007115C /* Apollo */; };
@@ -20,7 +17,7 @@
 		FF7DE5FE2A9E7CC00007115C /* ApolloAPI in Frameworks */ = {isa = PBXBuildFile; productRef = FF7DE5FD2A9E7CC00007115C /* ApolloAPI */; };
 		FF7DE6022A9E7CC00007115C /* ApolloSQLite in Frameworks */ = {isa = PBXBuildFile; productRef = FF7DE6012A9E7CC00007115C /* ApolloSQLite */; };
 		FF7DE6042A9E810B0007115C /* GraphQL in Resources */ = {isa = PBXBuildFile; fileRef = FF7DE6032A9E810B0007115C /* GraphQL */; };
-		FF7DE60A2A9E8AD60007115C /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE6092A9E8AD60007115C /* LandingView.swift */; };
+		FF7DE60A2A9E8AD60007115C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7DE6092A9E8AD60007115C /* MainView.swift */; };
 		FFA5EBEB2AA33179002EF160 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA5EBEA2AA33179002EF160 /* CardDetailView.swift */; };
 		FFCF1AE42AAE09D800C07DC3 /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCF1AE32AAE09D800C07DC3 /* Routing.swift */; };
 		FFFE9DD42AA656E200A917F1 /* String+Html.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFE9DD32AA656E200A917F1 /* String+Html.swift */; };
@@ -28,15 +25,12 @@
 
 /* Begin PBXFileReference section */
 		FF1933402A9FC29900F30EDC /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		FF27D7BC2AA79A05002EF0DE /* HomeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTest.swift; sourceTree = "<group>"; };
 		FF7DE5E52A9E7A080007115C /* AnimeQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7DE5E82A9E7A080007115C /* AnimeQLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeQLApp.swift; sourceTree = "<group>"; };
-		FF7DE5EA2A9E7A080007115C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FF7DE5EC2A9E7A080007115C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FF7DE5EE2A9E7A0B0007115C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF7DE5F12A9E7A0B0007115C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FF7DE6032A9E810B0007115C /* GraphQL */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GraphQL; sourceTree = "<group>"; };
-		FF7DE6092A9E8AD60007115C /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		FF7DE6092A9E8AD60007115C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FFA5EBEA2AA33179002EF160 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 		FFCF1AE32AAE09D800C07DC3 /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
 		FFFE9DD32AA656E200A917F1 /* String+Html.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Html.swift"; sourceTree = "<group>"; };
@@ -67,16 +61,6 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		FF1933422A9FD41200F30EDC /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				FF7DE5EA2A9E7A080007115C /* ContentView.swift */,
-				FF7DE5EC2A9E7A080007115C /* Item.swift */,
-				FF27D7BC2AA79A05002EF0DE /* HomeTest.swift */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		FF7DE5DC2A9E7A080007115C = {
 			isa = PBXGroup;
 			children = (
@@ -97,15 +81,13 @@
 		FF7DE5E72A9E7A080007115C /* AnimeQL */ = {
 			isa = PBXGroup;
 			children = (
+				FF7DE5E82A9E7A080007115C /* AnimeQLApp.swift */,
 				FFFE9DD22AA656CA00A917F1 /* Extensions */,
 				FF7DE6032A9E810B0007115C /* GraphQL */,
-				FF7DE5E82A9E7A080007115C /* AnimeQLApp.swift */,
-				FF7DE6092A9E8AD60007115C /* LandingView.swift */,
-				FF19333F2A9FC27A00F30EDC /* Components */,
-				FF1933422A9FD41200F30EDC /* Test */,
-				FF7DE5EE2A9E7A0B0007115C /* Assets.xcassets */,
-				FF7DE5F02A9E7A0B0007115C /* Preview Content */,
+				FFCF1AE62AAE0D2800C07DC3 /* Scenes */,
 				FFCF1AE52AAE09DB00C07DC3 /* Navigation */,
+				FF7DE5F02A9E7A0B0007115C /* Preview Content */,
+				FF7DE5EE2A9E7A0B0007115C /* Assets.xcassets */,
 			);
 			path = AnimeQL;
 			sourceTree = "<group>";
@@ -131,6 +113,15 @@
 				FFCF1AE32AAE09D800C07DC3 /* Routing.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		FFCF1AE62AAE0D2800C07DC3 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				FF7DE6092A9E8AD60007115C /* MainView.swift */,
+				FF19333F2A9FC27A00F30EDC /* Components */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		FFFE9DD22AA656CA00A917F1 /* Extensions */ = {
@@ -223,10 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF7DE5EB2A9E7A080007115C /* ContentView.swift in Sources */,
-				FF7DE5ED2A9E7A080007115C /* Item.swift in Sources */,
-				FF27D7BD2AA79A05002EF0DE /* HomeTest.swift in Sources */,
-				FF7DE60A2A9E8AD60007115C /* LandingView.swift in Sources */,
+				FF7DE60A2A9E8AD60007115C /* MainView.swift in Sources */,
 				FFA5EBEB2AA33179002EF160 /* CardDetailView.swift in Sources */,
 				FFCF1AE42AAE09D800C07DC3 /* Routing.swift in Sources */,
 				FFFE9DD42AA656E200A917F1 /* String+Html.swift in Sources */,

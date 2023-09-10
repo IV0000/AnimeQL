@@ -1,5 +1,5 @@
 //
-//  LandingView.swift
+//  MainView.swift
 //  AnimeQL
 //
 //  Created by Ivan Voloshchuk on 29/08/23.
@@ -9,7 +9,7 @@ import AnilistApi
 import Apollo
 import SwiftUI
 
-struct LandingView: View {
+struct MainView: View {
     @StateObject var ns = NetworkService()
     @State private var number = 10
     var body: some View {
@@ -38,7 +38,7 @@ struct LandingView: View {
 }
 
 #Preview {
-    LandingView()
+    MainView()
 }
 
 class NetworkService: ObservableObject {
