@@ -27,7 +27,7 @@ struct CardDetailView: View {
 
     @State private var offsetY: CGFloat = 0
     let mockUrlImage = "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/nx31706-8NapvUJrWR3C.png"
-    let media: PageQuery.Data.Page.Medium?
+    let media: CarouselMediaQuery.Data.Page.Medium?
 
     var body: some View {
         GeometryReader {
@@ -41,7 +41,7 @@ struct CardDetailView: View {
                         let progress = max(min(-offsetY / (headerHeight - minimumHeaderHeight), 1), 0)
                         GeometryReader { _ in
                             ZStack {
-                                AsyncImage(url: URL(string: media?.coverImage?.extraLarge ?? ""),
+                                AsyncImage(url: URL(string: media?.coverImage?.medium ?? ""),
                                            transaction: .init(animation: .easeIn(duration: 0.3)))
                                 { phase in
                                     switch phase {

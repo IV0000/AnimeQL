@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 enum Route: Hashable {
-    case detail(PageQuery.Data.Page.Medium?)
+    case detail(CarouselMediaQuery.Data.Page.Medium?)
 }
 
 private struct Routing: ViewModifier {

@@ -11,7 +11,7 @@ import SwiftUI
 // mediaList?.media?.coverImage?.medium ?? ""
 
 struct CardView: View {
-    var medium: PageQuery.Data.Page.Medium?
+    var medium: CarouselMediaQuery.Data.Page.Medium?
 
     var title: String {
         if let englishTitle = medium?.title?.english {
@@ -23,7 +23,7 @@ struct CardView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            AsyncImage(url: URL(string: medium?.coverImage?.extraLarge ?? ""),
+            AsyncImage(url: URL(string: medium?.coverImage?.medium ?? ""),
                        transaction: .init(animation: .easeIn(duration: 0.3)))
             { phase in
                 switch phase {

@@ -17,6 +17,5 @@ struct AnimeQLApp: App {
                     .applyRoutingDestination()
             }
         }
-        .modelContainer(for: Item.self)
     }
 }

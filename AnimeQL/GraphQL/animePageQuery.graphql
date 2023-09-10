@@ -1,20 +1,10 @@
-query Page($perPage: Int, $sort: [MediaSort], $type: MediaType) {
+query CarouselMedia($perPage: Int, $type: MediaType, $sort: [MediaSort]) {
   Page(perPage: $perPage) {
-    media(sort: $sort, type: $type) {
-      averageScore
-      coverImage {
-        extraLarge
-      }
-      description
-      episodes
-      genres
-      title {
-        romaji
-        english
-      }
-      duration
-      format
+    media(type: $type, sort: $sort) {
+      ...MediaFragment
+    }
+    pageInfo {
+      currentPage
     }
   }
 }
-

@@ -25,8 +25,9 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "Query": return AnilistApi.Objects.Query
     case "Page": return AnilistApi.Objects.Page
     case "Media": return AnilistApi.Objects.Media
-    case "MediaCoverImage": return AnilistApi.Objects.MediaCoverImage
     case "MediaTitle": return AnilistApi.Objects.MediaTitle
+    case "MediaCoverImage": return AnilistApi.Objects.MediaCoverImage
+    case "PageInfo": return AnilistApi.Objects.PageInfo
     default: return nil
     }
   }

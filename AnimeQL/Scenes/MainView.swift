@@ -11,29 +11,14 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject var ns = NetworkService()
-    @State private var number = 10
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Highest score")
-                .font(.title2)
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    ForEach(ns.mediaList, id: \.self) { media in
-                        NavigationLink(value: Route.detail(media), label: {
-                            CardView(medium: media)
+            CarouselView(title: "Trending", sortType: .trendingDesc, service: ns)
+            Spacer()
+            CarouselView(title: "Highest Score", sortType: .scoreDesc, service: ns)
 
-                        })
-                        .buttonStyle(.plain)
-                    }
-                }
-            }
-            Text("Current Season")
-                .font(.title2)
             Spacer()
         }
-        .onAppear(perform: {
-            ns.fetchPage(numberOfElements: number, sort: .scoreDesc)
-        })
     }
 }
 
@@ -42,10 +27,11 @@ struct MainView: View {
 }
 
 class NetworkService: ObservableObject {
-    private var apollo = ApolloClient(url: URL(string: "https://graphql.anilist.co")!)
-    @Published var mediaList: [PageQuery.Data.Page.Medium?] = []
+    private var client = ApolloClient(url: URL(string: "https://graphql.anilist.co")!)
+//    @Published var mediaList: [CarouselMediaQuery.Data.Page.Medium?] = []
 
-    func fetchPage(numberOfElements: Int, sort: MediaSort?) {
+    func fetchPage(numberOfElements: Int, sort: MediaSort?) -> [CarouselMediaQuery.Data.Page.Medium?] {
+        var media: [CarouselMediaQuery.Data.Page.Medium?] = []
         let sortEnum: [GraphQLEnum<MediaSort>?]
 
         if let sortValue = sort {
@@ -54,21 +40,43 @@ class NetworkService: ObservableObject {
             sortEnum = []
         }
 
-        apollo.fetch(query: PageQuery(perPage: GraphQLNullable(integerLiteral: numberOfElements),
-                                      sort: .some(sortEnum),
-                                      type: .some(GraphQLEnum(MediaType.anime))))
+        client.fetch(query: CarouselMediaQuery(perPage: GraphQLNullable(integerLiteral: numberOfElements),
+                                               type: .some(GraphQLEnum(MediaType.anime)),
+                                               sort: .some(sortEnum)))
         { [weak self] result in
             switch result {
             case let .success(value):
-                print(value)
                 if let data = value.data, let page = data.page {
-                    self?.mediaList = page.media ?? []
+                    media = page.media ?? []
                 }
             case let .failure(error):
                 print(error.localizedDescription)
             }
         }
+        return media
     }
 
     // Add different fetches for different t
+}
+
+// TEST
+struct MediaVM: Identifiable, Decodable {
+    let id: String
+    let episodes: Int
+    let title: MediaTitle
+    let averageScore: Int
+    let image: CoverImage
+
+    struct MediaTitle: Decodable {
+        let english: String
+        let romaji: String
+    }
+
+    struct CoverImage: Decodable {
+        let url: String
+    }
+
+//    init () {
+//
+//    }
 }

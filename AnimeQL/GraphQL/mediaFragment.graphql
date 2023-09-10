@@ -1,0 +1,12 @@
+fragment MediaFragment on Media {
+  episodes
+  title {
+    english
+    romaji
+  }
+  averageScore
+  coverImage {
+    medium
+  }
+  id
+}
