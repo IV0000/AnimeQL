@@ -47,6 +47,7 @@ struct CardView: View {
             VStack(alignment: .leading) {
                 Text(title)
                     .lineLimit(2)
+                    .multilineTextAlignment(.leading)
                 Spacer()
                 HStack {
                     Image(systemName: "tv")
@@ -68,7 +69,7 @@ struct CardView: View {
 extension View {
     func asyncImagePlaceholder(error: String = "") -> some View {
         Rectangle()
-            .fill(Color.gray)
+            .fill(Color.black)
             .opacity(0.2)
             .overlay {
                 VStack {

@@ -5,6 +5,7 @@
 //  Created by Ivan Voloshchuk on 02/09/23.
 //
 
+import AnilistApi
 import SwiftUI
 
 private enum HeaderSection {
@@ -26,6 +27,7 @@ struct CardDetailView: View {
 
     @State private var offsetY: CGFloat = 0
     let mockUrlImage = "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/nx31706-8NapvUJrWR3C.png"
+    let media: PageQuery.Data.Page.Medium?
 
     var body: some View {
         GeometryReader {
@@ -39,26 +41,26 @@ struct CardDetailView: View {
                         let progress = max(min(-offsetY / (headerHeight - minimumHeaderHeight), 1), 0)
                         GeometryReader { _ in
                             ZStack {
-                                AsyncImage(url: URL(string: mockUrlImage),
+                                AsyncImage(url: URL(string: media?.coverImage?.extraLarge ?? ""),
                                            transaction: .init(animation: .easeIn(duration: 0.3)))
                                 { phase in
                                     switch phase {
                                     case .empty:
                                         asyncImagePlaceholder()
-                                            .transition(.opacity.combined(with: .slide))
+                                            .transition(.opacity.combined(with: .move(edge: .trailing)))
                                     case let .success(image):
                                         image
                                             .resizable()
                                             .aspectRatio(contentMode: .fill)
-                                            .transition(.opacity.combined(with: .slide))
+                                            .transition(.opacity.combined(with: .move(edge: .leading)))
                                             .overlay {
                                                 LinearGradient(gradient: Gradient(colors: [.white, .black]), startPoint: .top, endPoint: .bottom)
                                                     .opacity(0.8)
                                                     .blendMode(.multiply)
                                             }
 //                                            .offset(y: 200) // Adding offset breaks everything
-                                    case let .failure(error):
-                                        asyncImagePlaceholder(error: error.localizedDescription)
+                                    case .failure:
+                                        asyncImagePlaceholder(error: "Error image loading")
                                     @unknown default:
                                         asyncImagePlaceholder()
                                     }
@@ -249,5 +251,5 @@ struct AboutView: View {
 }
 
 #Preview {
-    CardDetailView()
+    CardDetailView(media: nil)
 }

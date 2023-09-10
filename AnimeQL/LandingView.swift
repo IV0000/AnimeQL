@@ -19,7 +19,11 @@ struct LandingView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(ns.mediaList, id: \.self) { media in
-                        CardView(medium: media)
+                        NavigationLink(value: Route.detail(media), label: {
+                            CardView(medium: media)
+
+                        })
+                        .buttonStyle(.plain)
                     }
                 }
             }
